@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/small-logo.svg'%}">
+</head>
+
+<body>
+    <div class="menu">
+        <a href="/">
+        <img alt="logo" id="header-img" src="{% static 'image/logo.svg' %}" width="200"></a>
+        <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/about-us">About Us</a>
+        <a href="/contact">Contact</a>
+        <a class="active" href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="login">
+        <div class="row2">
+            <div class="column3">
+                <tr>
+                    <th>
+                        <h1 class="login-word"><br><br><br>Log in to your <br>Realevancy <br>account</h1>
+                    </th>
+                </tr>
+            </div>
+            <div class="column3">
+                <table>
+                    <tr>
+                        <th>
+                            <form class="login-form">
+                                <h2 style="color:#A2A3A5;">Login</h2>
+                                <input type="email" placeholder="Email or Username" name="username" required>
+                                <input type="password" placeholder="Password" name="psw" required>
+                                <button type="submit">Login</button>
+
+                                {% comment %} <label class="remember-me" ><input type="checkbox" name="remember">Remember me</label> {% endcomment %}
+                                <span class="forget-psw">Forgot <a href="#">password?</a></span>
+
+                                <div class="social-btn">
+                                    <button type="submit" class="twitter-btn"><i class="fa fa-google"
+                                            aria-hidden="true"></i> <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"
+                                            style="width:20px;height:20px"> &emsp;Login with Google</button>
+                                    <button type="submit" class="facebook-btn"><i class="fa fa-facebook"
+                                            aria-hidden="true"></i> <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                                            style="width:20px;height:20px">&emsp;Login with Facebook</button>
+                                </div>
+                                <br><span class="need-signup">Doesn't have account? <a href="/signup">Sign Up</a></span><br>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/small-logo.svg'%}">
+</head>
+
+<body>
+    <div class="menu">
+    <a href="/">
+        <img alt="logo" id="header-img" src="{% static 'image/logo.svg' %}" width="200"></a>
+        <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/about-us">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/login">Login</a>
+        <a class="active" href="/signup">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="login">
+        <div class="row2">
+            <div class="column3">
+                <tr>
+                    <th>
+                        <h1 class="login-word"><br><br><br>Create you new<br>Realevancy <br>account</h1>
+                    </th>
+                </tr>
+            </div>
+            <div class="column3">
+                <table>
+                    <tr>
+                        <th>
+                            <form class="login-form" method="post" action=".">
+                            {% csrf_token %}
+                            {% comment %} {{form.username}} {% endcomment %}
+                                <h2 style="color:#A2A3A5;">Sign up</h2>
+                                {% comment %} <input type="username" placeholder="Create Username" name="username" required> {% endcomment %}
+                                {{form.username}}
+                                {{form.email}}
+                                {{form.password1}}
+                                {{form.password2}}
+                                {% comment %} <input type="email" placeholder="Enter email" name="email" required>
+                                <input type="password" placeholder="Password" name="psw" required>
+                                <input type="password" placeholder="Retype Password" name="psw" required> {% endcomment %}
+                                <button type="submit">Sign up</button>
+
+                                {% comment %} <label class="remember-me"><input type="checkbox" name="remember">Remember me</label> {% endcomment %}
+                                <span class="forget-psw">Forgot <a href="#">password?</a></span>
+
+                                {% comment %} <div class="social-btn">
+                                    <button type="submit" class="twitter-btn"><i class="fa fa-google"
+                                            aria-hidden="true"></i> <img
+                                            src="{% static 'image/google-logo.svg' %}"
+                                            style="width:20px;height:20px"> &emsp;Sign up with Google</button>
+                                    <button type="submit" class="facebook-btn"><i class="fa fa-facebook"
+                                            aria-hidden="true"></i> <img
+                                            src="{% static 'image/fb-logo.svg' %}"
+                                            style="width:20px;height:20px">&emsp;Sign up with Facebook</button>
+                                </div> {% endcomment %}
+                                <br><span class="need-login">Already have an account? <a href="/login">Login</a></span><br>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

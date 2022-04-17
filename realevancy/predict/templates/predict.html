@@ -1,0 +1,188 @@
+<!-- hello_world.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Result Page</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/small-logo.svg'%}">
+    <style>
+    img.emojione {
+  // Override any img styles to ensure Emojis are displayed inline
+  margin: 0px !important;
+  display: inline !important;
+
+  height: auto;
+  width: 50px;
+}
+
+p#wrong-test {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: inline-block;
+}
+
+span.emoji {
+  font-size: 30px;
+  vertical-align: middle;
+  line-height: 2;
+}
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <a href="/">
+        <img alt="logo" id="header-img" src="{% static 'image/logo.svg' %}" width="200"></a>
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a href="/about-us">About Us</a>
+            <a href="/contact">Contact</a>
+            {% comment %} <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a> {% endcomment %}
+        </div>
+    </div>
+    
+
+    <!-- Button -->
+    <span> <br><br><br> </span>
+    
+
+    <!-- words -->
+    <div class="search-word">
+        <span> Here's what we found from<br></span>
+        <br>
+    </div>
+    <div class="search-keyword">
+        <span> "{{keyword}}" and "{{link}}" </span>
+        <span> <br><br></span>
+    </div>
+
+    <!-- result-relevant -->
+    <div class='result'>
+        <h3> &nbsp; </h3>
+
+        {% if prediction == 1 %}
+        <div class="result1" style="background-color: #76F683;margin-left: 12em; font-weight: bold;">
+            <span> Relevant </span>
+        </div>
+        <div class="result3" style="background-color: #B7E3FF;margin-left: 20em; font-weight: normal;">
+            <span>Not Relevant</span>
+        </div>
+        
+        {% else %}
+        <div class="result1" style="background-color: #B7E3FF;margin-left: 12em; font-weight: normal;">
+            <span> Relevant </span>
+        </div>
+        <div class="result3" style="background-color: #F67676;margin-left: 20em; font-weight: bold;">
+            <span>Not Relevant</span>
+        </div>
+        {% endif %}
+
+
+        <h3> <br><br><br><br> </h3>
+
+        <div class="summaryVisualization">
+            <div class="row">
+                <div class="column2">
+                    <table>
+                        <tr style="background-color: white">
+                            <th><span class="country-name">Summary</span></th>
+                        </tr>
+                        <tr>
+                            <td><span style="font-weight: bold;"> Result</span> : Your keyword and article is 
+                             {% if prediction == 1 %}
+                             Relevant 
+                             {% else %}
+                             Not Relevant
+                             {% endif %}
+
+                                 <br><br><br> <span style="font-weight: bold;"> Title</span> : {{title}}
+                                 <br><br><br> <span style="font-weight: bold;"> Abstract</span> : {{abstract}}
+                                 <br><br><br> <span style="font-weight: bold;"> Date of Publish</span> : {{article_date}} 
+                                 <br><br>
+                            </td>
+                        </tr>
+                        <tr style="background-color: white">
+                            <th style="font-weight: normal;"><span class="country-name"> Top 3 Searched Keywords </span>
+                            </th></tr>
+                        <tr><td>
+                        &emsp; &emsp; &emsp; <span class="emoji">&#129351;</span> {{kw1}} : {{count1}} time(s) &#128293;
+                        <br>&emsp; &emsp; &emsp; <span class="emoji">&#129352;</span> {{kw2}} : {{count2}} time(s) 
+                        <br>&emsp; &emsp; &emsp; <span class="emoji">&#129353;</span> {{kw3}} : {{count3}} time(s) 
+                        </td></tr>
+
+                    </table>
+                </div>
+                <div class="column2">
+                    <table>
+                        <tr style="background-color: white">
+                            <th><span class="country-name">Relevant Terms appear in the Article</span></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center><img id="header-img"
+                                        src="{% static 'image/piechart.png' %}"
+                                        alt="logo" width="500"></center>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="country">
+                    <p> <br> </p>
+                    <table>
+                        <tr>
+                            <td>Current COVID-19 Status in <span class="country-name"> Malaysia </span> </td>
+                        </tr>
+                        <tr>
+                            <td><iframe src="https://covidnow.moh.gov.my/" title="COVID-19 Status in Malaysia" style="height:1200px ;width:100%; border: none;" ></iframe></td>
+                        </tr>
+
+                    </table>
+                </div>
+        </div>
+        
+            <h3> <br><br><br><br>
+            </h3>
+        </div>
+    </div>
+
+
+    <!-- Articles -->
+    <div class="search-word">
+        {% comment %} <span> <br><br>Articles that are also relevant to your keyword(s) <br><br><br></span>
+    </div>
+
+    <div class="scrollmenu">
+        <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+        <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+        <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+        <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+        <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+        <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+        <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+        <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+        <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a> {% endcomment %}
+        <h3> <br><br> </h3>
+    </div>
+
+    <div class='result'>
+    <div class='info-text'>
+        <p> 
+        <br><br><a href="/privacy">PRIVACY</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 
+        <a href="/contact">CONTACT US</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 
+        <a href="/about-us">ABOUT US</a>
+        <br><br><br> Copyright &copy; 2021 Realevancy Inc. All Rights Reserved.
+        <br> A final year project for FIT3164 Monash University Malaysia
+        <br> &emsp; &emsp; &emsp; &emsp; &emsp;
+        </p>
+
+    </div>
+    </div>
+
+</body>
+
+</html>

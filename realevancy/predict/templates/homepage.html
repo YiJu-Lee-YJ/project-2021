@@ -1,0 +1,200 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="{%static 'css/style.css'%}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'image/small-logo.svg'%}">
+  <style>
+  .datalist {
+   height:50px !important;
+   max-height:80px !important;
+   width:50px;
+   overflow:scroll;
+   display:block !important;
+  }
+  datalist:focus {
+        min-width: 150px;
+        width: auto;}
+</style>
+</head>
+
+<body>
+  <div class="menu">
+    <a href="/">
+      <img alt="logo" id="header-img" src="{% static 'image/logo.svg' %}" width="200"> </a>
+    <div class="topnav">
+      <a class="active" href="/">Home</a>
+      <a href="/about-us">About Us</a>
+      <a href="/contact">Contact</a>
+      {% comment %} <a href="/login">Login</a>
+      <a href="/signup">Sign Up</a> {% endcomment %}
+    </div>
+  </div>
+
+  <!-- Web title -->
+  <h2>Your #1 COVID-19 Article Relevancy Detector</h2>
+
+  <!-- Search Button -->
+  <div class="container">
+    <form action = "/predict/" method="post">
+    {% csrf_token %}
+      <div class="wrapper">
+        <div class="keyword">
+          <span>&nbsp; Keyword(s) &emsp; <a href="#use"><img src="{% static 'image/information-button.svg' %}"
+                width="15" title="How Realevancy works"></a>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+            &emsp;
+            Article Link &emsp; <a href="#use"><img src="{% static 'image/information-button.svg' %}" width="15"
+                title="How Realevancy works"></a></span>
+        </div>
+        <div class="search-container">
+          <div class="search">
+            <div style="height: 90px;">
+            <select id="browsers"  list="browsers" type="text" class="search" name="keyword" placeholder="e.g. Coronavirus Origin" required>
+              <option>Coronavirus Origin</option>
+              <option>Coronavirus Response to Weather Changes</option>
+              <option>Coronavirus Immunity</option>
+              <option>How Do People Die From The Coronavirus</option>
+              <option>Animal Models of COVID-19</option>
+              <option>Coronavirus Test Rapid Testing</option>
+              <option>Serological Tests for Coronavirus</option>
+              <option>Coronavirus Under Reporting</option>
+              <option>Coronavirus in Canada</option>
+              <option>Coronavirus Social Distancing Impact</option>
+
+              <option>Coronavirus Hospital Rationing</option>
+              <option>Coronavirus Quarantine</option>
+              <option>How Does Coronavirus Spread</option>
+              <option>coronavirus super spreaders</option>
+              <option>Coronavirus Outside Body</option>
+              <option>How Long Does Coronavirus Survive on Surfaces</option>
+              <option>Coronavirus Clinical Trials</option>
+              <option>Masks Prevent Coronavirus</option>
+              <option>What Alcohol Sanitizer Kills Coronavirus</option>
+              <option>Coronavirus and ACE Inhibitors</option>
+
+              <option>Coronavirus Mortality</option>
+              <option>Coronavirus Heart Impacts</option>
+              <option>Coronavirus Hypertension</option>
+              <option>Coronavirus Diabetes</option>
+              <option>Coronavirus Biomarkers</option>
+              <option>Coronavirus Early Symptoms</option>
+              <option>Coronavirus Asymptomatic</option>
+              <option>Coronavirus Hydroxychloroquine</option>
+              <option>Coronavirus Drug Repurposing</option>
+              <option>Coronavirus Remdesivir</option>
+              
+              <option>Difference Between Coronavirus and Flu</option>
+              <option>Coronavirus Subtypes</option>
+              <option>Coronavirus Vaccine Candidates</option>
+              <option>Coronavirus Recovery</option>
+              <option>Coronavirus Public Datasets</option>
+              
+            </select>
+            </div>
+          </div>
+          <input type="text" class="link2"  name="link" placeholder="e.g. www.who.int" required>
+          <a href="/predict"><button type="submit" class="button" name='submit' >Search</button></a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+  <!-- Icon of a man sitting -->
+  <div>
+    <img src="{% static 'image/homepage-icon.jpg' %}" class="center">
+  </div>
+
+  <!-- How realevancy works part-->
+  <br>
+  <div class="bluebg" id="use">
+    <h2> <br><br>How Realevancy works<br></h2>
+
+    <!-- Icon of Relevancy tutorial -->
+    <div class="row" style="color:#1C3988">
+      <div class="column" style="width:35%">
+        <tr>
+          <th></th>
+          <th><br>
+          <span style="margin-left:60px;">
+          <img src="{% static 'image/steps.png' %}" style="width:1300px;height:350px" /></span>
+          </span>
+          </th>
+        </tr>
+      </div>
+    </div>
+
+
+
+
+    <!-- Articles of the week -->
+    <div class="search-word">
+      {% comment %} <span> <br><br><br>Articles of the week <br><br><br></span>
+    </div>
+
+    <div class="scrollmenu">
+      <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+      <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+      <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+      <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+      <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+      <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+      <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+      <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a>
+      <a href="#ArticleName-SourceName">ArticleName<br>SourceName</a> {% endcomment %}
+      <h3> <br><br> </h3>
+    </div>
+
+    <div class='result'>
+      <div style="text-align: center;">
+        <p>
+          <br><br> <a href="/privacy">PRIVACY</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+          &emsp; &emsp; &emsp;
+          &emsp; &emsp;
+          <a href="/contact">CONTACT US</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+          &emsp; &emsp; &emsp;
+          &emsp;
+          <a href="/about-us">ABOUT US</a>
+          <br><br><br> Copyright &copy; 2021 Realevancy Inc. All Rights Reserved.
+          <br> A final year project for FIT3164 Monash University Malaysia
+          <br> &emsp; &emsp; &emsp; &emsp; &emsp;
+        </p>
+      </div>
+    </div>
+
+
+<!-- {% comment %} <script>
+    $(document).on('submit', '#post-form',function(e){
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'{% url "predict:submit_prediction" %}',
+            data:{
+                keyword:$('#keyword').val(),
+                link:$('#link').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                action: 'post'
+            },
+            success:function(json) {
+                document.forms["post-form"].reset();
+                document.getElementById("prediction").innerHTML = json['result']
+                document.getElementById("kw").innerHTML = json['keyword']
+                document.getElementById("li").innerHTML = json['link']
+
+            },
+            error : function(xhr,errmsg,err) {
+
+            }
+        });
+    })
+</script> {% endcomment %} -->
+
+
+</body>
+
+</html>

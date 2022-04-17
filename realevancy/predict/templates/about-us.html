@@ -1,0 +1,112 @@
+<!-- hello_world.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About us</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'image/small-logo.svg'%}">
+</head>
+
+<body>
+    <div class="menu">
+        <a href="/">
+            <img alt="logo" id="header-img" src="{% static 'image/logo.svg' %}" width="200"></a>
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a class="active" href="/about-us">About Us</a>
+            <a href="/contact">Contact</a>
+            {% comment %} <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a> {% endcomment %}
+        </div>
+    </div>
+
+    <!-- Opening words -->
+    <div class="search-word">
+        <span> <br> </span>
+        <span> Meet the team behind Realevancy </span>
+    </div>
+
+    <!-- Members sections-->
+    <br>
+    <div class="bluebg" id="use">
+        <br>
+        <div class="row3" style="color:#1C3988">
+            <br>
+            <div class="column" style="text-align:center;width:25%">
+                <tr>
+                    <th></th>
+                    <th>
+                        <span style="margin-left:50px;"><img src="{% static 'image/silmy.png' %}"
+                                style="width:210px;height:210px" /></span>
+                        <p><span style="text-align:center;margin-left:50px;"> Amanda Silmy K. Kusmarsetyo</span><br>
+                         <span style="margin-left:50px;"> Project Manager</span><br>
+                         <span style="margin-left:50px;"> akus0005@student.monash</span><br>
+                         <span style="margin-left:50px;"> +6285771112049</span>
+                    </th>
+                    </p>
+            </div>
+            <div class="column" style="text-align:center;width:25%">
+                <tr>
+                    <th></th>
+                    <th>
+                        <span style="margin-left:50px;"><img src="{% static 'image/julian.png' %}"
+                                style="width:210px;height:210px" /></span>
+                        <p><span style="margin-left:50px;"> Jun Ming Khong</span><br>
+                         <span style="margin-left:50px;"> Tech Lead</span><br>
+                         <span style="margin-left:50px;"> jkho0020@student.monash</span><br>
+                         <span style="margin-left:50px;"> +60165949022</span>
+                    </th>
+                    </p>
+            </div>
+            <div class="column" style="text-align:center;width:25%">
+                <tr>
+                    <th></th>
+                    <th>
+                        <span style="margin-left:50px;"><img src="{% static 'image/dunith.png' %}"
+                                style="width:210px;height:210px" /></span>
+                        <p><span style="margin-left:50px;"> Dunithra De Silva</span><br>
+                         <span style="margin-left:50px;"> Project Manager</span><br>
+                         <span style="margin-left:50px;"> ddes0003@student.monash</span><br>
+                         <span style="margin-left:50px;"> +94777127167</span>
+                    </th>
+                    </p>
+            </div>
+            <div class="column" style="text-align:center;width:25%">
+                <tr>
+                    <th></th>
+                    <th>
+                        <span style="margin-left:50px;"><img src="{% static 'image/yiju.png' %}"
+                                style="width:210px;height:210px" /></span>
+                        <p><span style="margin-left:50px;"> Yi Ju Lee</span><br>
+                         <span style="margin-left:50px;"> Project Manager</span><br>
+                         <span style="margin-left:50px;"> ylee0042@student.monash</span><br>
+                         <span style="margin-left:50px;"> +886905402489</span>
+                    </th>
+                    </p>
+                    </span>
+                    <br>
+            </div>
+        </div>
+    </div>
+
+        <!-- Footer -->
+        <div class='result'>
+            <div class='info-text'>
+                <p>
+                    <br><br> <a href="/privacy">PRIVACY</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+                    &emsp; &emsp; &emsp;
+                    <a href="/contact">CONTACT US</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+                    &emsp; &emsp; &emsp;<a href="/about-us">ABOUT US</a>
+                    <br><br><br> Copyright &copy; 2021 Realevancy Inc. All Rights Reserved.
+                    <br> A final year project for FIT3164 Monash University Malaysia
+                    <br> &emsp; &emsp; &emsp; &emsp; &emsp;
+                </p>
+
+            </div>
+        </div>
+
+</body>
+
+</html>
